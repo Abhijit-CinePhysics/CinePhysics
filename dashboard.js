@@ -1,61 +1,15 @@
-// ===============================
-// CinePhysics Chapter Database
-// ===============================
+// =====================================
+// Combine Class Databases
+// =====================================
 
 const chapterDatabase = {
-
-    "Class 11": {
-
-        "Units and Measurements": [
-            "Units",
-            "SI System & Prefixes",
-            "Dimensions",
-            "Dimensional Analysis",
-            "Significant Figures",
-            "Errors in Measurement"
-        ],
-
-        "Motion in a Straight Line": [
-            "Position",
-            "Distance and Displacement",
-            "Speed",
-            "Velocity",
-            "Acceleration",
-            "Graphs of Motion"
-        ],
-
-        "Motion in a Plane": [
-            "Scalars and Vectors",
-            "Vector Addition",
-            "Vector Resolution",
-            "Projectile Motion",
-            "Relative Velocity"
-        ]
-    },
-
-    "Class 12": {
-
-        "Electric Charges and Fields": [
-            "Electric Charge",
-            "Coulomb's Law",
-            "Electric Field",
-            "Electric Field Lines",
-            "Electric Dipole"
-        ],
-
-        "Current Electricity": [
-            "Electric Current",
-            "Drift Velocity",
-            "Ohm's Law",
-            "Resistivity",
-            "Kirchhoff's Laws"
-        ]
-    }
+    "Class 11": class11Data,
+    "Class 12": class12Data
 };
 
-// ===============================
+// =====================================
 // DOM References
-// ===============================
+// =====================================
 
 const classSelect = document.getElementById("classSelect");
 const chapterList = document.getElementById("chapterList");
@@ -63,9 +17,9 @@ const chapterSearch = document.getElementById("chapterSearch");
 const topicsContainer = document.getElementById("topicsContainer");
 const outputArea = document.getElementById("outputArea");
 
-// ===============================
-// Populate Chapters
-// ===============================
+// =====================================
+// Load Chapters
+// =====================================
 
 function loadChapters() {
 
@@ -86,11 +40,12 @@ function loadChapters() {
         chapterList.appendChild(option);
 
     });
+
 }
 
-// ===============================
+// =====================================
 // Load Topics
-// ===============================
+// =====================================
 
 function loadTopics() {
 
@@ -106,15 +61,15 @@ function loadTopics() {
     if (!topics) {
 
         topicsContainer.innerHTML =
-            "No topics found.";
+            "Select a valid chapter.";
 
         return;
+
     }
 
     topics.forEach(topic => {
 
-        const label =
-            document.createElement("label");
+        const label = document.createElement("label");
 
         label.innerHTML = `
             <input
@@ -131,11 +86,12 @@ function loadTopics() {
         );
 
     });
+
 }
 
-// ===============================
+// =====================================
 // Generate Prompt
-// ===============================
+// =====================================
 
 function generatePrompt() {
 
@@ -143,30 +99,107 @@ function generatePrompt() {
         [...document.querySelectorAll(".topicCheckbox:checked")]
         .map(cb => cb.value);
 
+    const worksheetType =
+        document.getElementById("worksheetType").value;
+
+    const difficulty =
+        document.getElementById("difficulty").value;
+
+    const outputMode =
+        document.querySelector(
+            'input[name="outputMode"]:checked'
+        ).value;
+
     let prompt = "";
 
-    prompt += `Generate a Physics worksheet.\n\n`;
+    prompt += `Generate a Physics Worksheet.\n\n`;
 
     prompt += `Class: ${classSelect.value}\n`;
 
-    prompt += `Chapter: ${chapterSearch.value}\n\n`;
+    prompt += `Chapter: ${chapterSearch.value}\n`;
+
+    prompt += `Worksheet Type: ${worksheetType}\n`;
+
+    prompt += `Difficulty: ${difficulty}\n\n`;
 
     prompt += `Topics:\n`;
 
-    selectedTopics.forEach(topic => {
-        prompt += `- ${topic}\n`;
-    });
+    if (selectedTopics.length === 0) {
+
+        prompt += `- All Chapter Topics\n`;
+
+    } else {
+
+        selectedTopics.forEach(topic => {
+
+            prompt += `- ${topic}\n`;
+
+        });
+
+    }
 
     prompt += `\n`;
 
-    prompt += `Apply CinePhysics Physics Standards.\n`;
+    prompt += `Output Mode: ${outputMode}\n\n`;
+
+    prompt += `CinePhysics Physics Standards:\n`;
+
+    prompt += `• Proper SI Units\n`;
+    prompt += `• Proper Superscripts and Subscripts\n`;
+    prompt += `• Correct Scientific Notation\n`;
+    prompt += `• Correct Dimensional Formulae\n`;
+    prompt += `• Correct Vector Notation\n`;
+    prompt += `• Publication Quality Equations\n`;
+    prompt += `• Numerical Verification\n`;
+    prompt += `• Physical Realism\n`;
+    prompt += `• CBSE / NCERT Terminology\n`;
+    prompt += `• No Duplicate Questions\n`;
+    prompt += `• Plausible MCQ Distractors\n`;
 
     outputArea.value = prompt;
+
 }
 
-// ===============================
+// =====================================
+// Copy Output
+// =====================================
+
+function copyOutput() {
+
+    outputArea.select();
+
+    document.execCommand("copy");
+
+    alert("Output copied.");
+
+}
+
+// =====================================
+// Placeholder HTML Generator
+// =====================================
+
+function generateHTMLTemplate() {
+
+    outputArea.value =
+`<h1>CinePhysics Worksheet</h1>
+
+<h2>${chapterSearch.value}</h2>
+
+<p>Class: ${classSelect.value}</p>
+
+<h3>Questions</h3>
+
+<!-- Paste generated questions here -->
+
+<h3>Answers</h3>
+
+<!-- Paste answer key here -->`;
+
+}
+
+// =====================================
 // Event Listeners
-// ===============================
+// =====================================
 
 classSelect.addEventListener(
     "change",
@@ -179,13 +212,28 @@ chapterSearch.addEventListener(
 );
 
 document
-    .getElementById("btnGeneratePrompt")
-    .addEventListener(
-        "click",
-        generatePrompt
-    );
+.getElementById("btnGeneratePrompt")
+.addEventListener(
+    "click",
+    generatePrompt
+);
 
+document
+.getElementById("btnCopyOutput")
+.addEventListener(
+    "click",
+    copyOutput
+);
+
+document
+.getElementById("btnGenerateHTML")
+.addEventListener(
+    "click",
+    generateHTMLTemplate
+);
+
+// =====================================
 // Initial Load
+// =====================================
 
 loadChapters();
-
