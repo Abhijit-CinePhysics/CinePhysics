@@ -1,1 +1,76 @@
 /* CinePhysics Main Stylesheet */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+header {
+    background-color: #1e293b;
+    color: #f8fafc;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+nav {
+    background: #334155;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+nav a {
+    color: #f1f5f9;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: #0284c7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #0f172a;
+    margin-bottom: 25px;
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.chapter-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.chapter-card h3 {
+    margin-top: 0;
+    color: #0284c7;
+}
+
+footer {
+    background: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
