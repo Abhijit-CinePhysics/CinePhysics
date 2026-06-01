@@ -189,14 +189,3 @@ document
 
 loadChapters();
 
-<button id="btnGeneratePrompt">
-Generate Prompt
-</button>
-
-<button id="btnGenerateHTML">
-Generate HTML Template
-</button>
-
-<button id="btnCopyOutput">
-Copy Output
-</button>
