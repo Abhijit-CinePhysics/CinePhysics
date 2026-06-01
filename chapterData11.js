@@ -1,4 +1,4 @@
-"Class 11": {
+const class11Data = {
 
 "Units and Measurements": [
 "Need for Measurement",
@@ -243,4 +243,4 @@
 "Harmonics",
 "Beats"
 ]
-}
+};
