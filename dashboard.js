@@ -286,6 +286,57 @@ prompt += "<h2>Section C</h2>\n";
 if(outputMode !== "student"){
     prompt += "<h2>Answer Key</h2>\n";
 }
+    prompt += "\nQUESTION FORMATTING RULES:\n";
+
+prompt += "Use proper HTML numbering.\n";
+
+prompt += "MCQs must be formatted as:\n";
+prompt += "<ol>\n";
+prompt += "<li>Question\n";
+prompt += "<ol type='a'>\n";
+prompt += "<li>Option</li>\n";
+prompt += "<li>Option</li>\n";
+prompt += "<li>Option</li>\n";
+prompt += "<li>Option</li>\n";
+prompt += "</ol>\n";
+prompt += "</li>\n";
+prompt += "</ol>\n\n";
+
+prompt += "Assertion-Reason questions must be numbered.\n";
+
+prompt += "Very Short Answer questions must use ordered numbering.\n";
+
+prompt += "Short Answer questions must use ordered numbering.\n";
+
+prompt += "Long Answer questions must use ordered numbering.\n";
+
+prompt += "Case Study questions must use sub-question numbering:\n";
+prompt += "(i), (ii), (iii), (iv)\n\n";
+
+prompt += "Do NOT use bullets for questions.\n";
+
+prompt += "All questions must be automatically numbered.\n";
+
+prompt += "All MCQ options must use a, b, c, d.\n";
+    prompt += "\nOUTPUT EXAMPLE:\n";
+
+prompt += `
+<h2>Section A: MCQs</h2>
+
+<ol>
+<li>
+What is SI unit of force?
+
+<ol type="a">
+<li>Newton</li>
+<li>Joule</li>
+<li>Watt</li>
+<li>Pascal</li>
+</ol>
+
+</li>
+</ol>
+`;
     outputArea.value = prompt;
 
 }
