@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CinePhysics Teacher Dashboard</title>
+
+<link rel="stylesheet" href="style.css?v=10">
+
+</head>
+<body>
+
+<header>
+    <h1>CinePhysics Teacher Dashboard</h1>
+    <p>Create Custom Physics Worksheets</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="worksheets.html">Worksheets</a>
+    <a href="class11.html">Class 11</a>
+    <a href="class12.html">Class 12</a>
+</nav>
+
+<div class="container">
+
+    <h2>Worksheet Builder</h2>
+
+    <div class="chapter-card">
+
+        <h3>Curriculum Selection</h3>
+
+        <label>Class</label><br>
+        <select id="classSelect">
+            <option>Class 11</option>
+            <option>Class 12</option>
+        </select>
+
+        <br><br>
+
+        <label>Chapter</label><br>
+        <input list="chapterList"
+               id="chapterSearch"
+               placeholder="Search chapter...">
+
+        <datalist id="chapterList">
+        </datalist>
+
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+
+        <h3>Topics</h3>
+
+        <div id="topicsContainer" class="topics-container">
+            Select a chapter to load topics.
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+
+        <h3>Worksheet Type</h3>
+
+        <select id="worksheetType">
+            <option>Practice</option>
+            <option>Revision</option>
+            <option>Assessment</option>
+            <option>HOTS</option>
+            <option>Numericals Only</option>
+            <option>NEET Style</option>
+            <option>JEE Style</option>
+            <option>Competency Based</option>
+        </select>
+
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+
+        <h3>Difficulty</h3>
+
+        <select id="difficulty">
+            <option>Basic</option>
+            <option>Moderate</option>
+            <option>Advanced</option>
+            <option>Mixed</option>
+        </select>
+
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+
+        <h3>Question Distribution</h3>
+
+        MCQ <input type="number" id="mcqCount"><br><br>
+
+        Assertion-Reason <input type="number" id="assertionCount"><br><br>
+
+        VSA <input type="number" id="vsaCount"><br><br>
+
+        SA <input type="number" id="saCount"><br><br>
+
+        LA <input type="number" id="laCount"><br><br>
+
+        Numericals <input type="number" id="numericalCount"><br><br>
+
+        Case Study <input type="number" id="caseStudyCount">
+
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Output Mode</h3>
+        <label>
+            <input type="radio" name="outputMode" value="student" checked> Student Worksheet
+        </label><br><br>
+        <label>
+            <input type="radio" name="outputMode" value="teacher"> Teacher Worksheet
+        </label><br><br>
+        <label>
+            <input type="radio" name="outputMode" value="resourcePack"> Teacher Resource Pack
+        </label>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Optional Enhancements</h3>
+        <label><input type="checkbox" id="enhanceLearningOutcomes"> Learning Outcomes</label><br><br>
+        <label><input type="checkbox" id="enhanceNcertAlignment"> NCERT Alignment</label><br><br>
+        <label><input type="checkbox" id="enhanceCbseCompetencies"> CBSE Competencies</label><br><br>
+        <label><input type="checkbox" id="enhanceTopicSummary"> Topic Coverage Summary</label><br><br>
+        <label><input type="checkbox" id="enhanceEstTime"> Estimated Completion Time</label><br><br>
+        <label><input type="checkbox" id="enhanceHots"> HOTS Questions</label><br><br>
+        <label><input type="checkbox" id="enhanceCompetencyBased"> Competency-Based Questions</label><br><br>
+        <label><input type="checkbox" id="enhanceRealLife"> Real-Life Applications</label><br><br>
+        <label><input type="checkbox" id="enhanceExperimental"> Experimental Skills Questions</label>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Actions & Templates</h3>
+        <button type="button" id="btnExportHTML">Export HTML</button>
+        <button type="button" id="btnExportPDF">Export PDF</button>
+        <button type="button" id="btnSaveTemplate">Save Template</button>
+        
+        <br><br>
+        <label>Saved Templates</label><br>
+        <select id="savedTemplates">
+            <option>-- Select a Saved Template --</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Question Bank Mode</h3>
+        <label>
+            <input type="checkbox" id="toggleQuestionBank"> Enable Manual Question Selection Mode
+        </label>
+        <p><small>Toggle this to manually browse and cherry-pick questions from the repository.</small></p>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Exam Paper Generator</h3>
+        <label>Paper Title / Header</label><br>
+        <input type="text" id="examTitle" placeholder="e.g., Half Yearly Examination 2026"><br><br>
+        
+        <label>Time Allowed</label><br>
+        <select id="examTime">
+            <option>45 Mins</option>
+            <option>1 Hour</option>
+            <option>2 Hours</option>
+            <option>3 Hours</option>
+        </select>
+        <br><br>
+        <button type="button" id="btnGenerateExam">Generate Exam Paper Structure</button>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Worksheet Versioning</h3>
+        <label>Current active version for this layout:</label><br>
+        <select id="worksheetVersion">
+            <option>v1.0 (Original Base)</option>
+            <option>v1.1 (Modified Numericals)</option>
+            <option>v1.2 (Alternative Set - Set B)</option>
+        </select>
+        <br><br>
+        <button type="button" id="btnCreateVersion">Create New Version Variant</button>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+        <h3>Difficulty Analytics</h3>
+        <div style="background-color: #f9f9f9; padding: 10px; border-left: 4px solid #007BFF;">
+            <p><strong>Estimated Setup Analytics:</strong></p>
+            <ul>
+                <li>Total Marks (Estimated): <span id="analyticsTotalMarks">0</span></li>
+                <li>Cognitive Load Index: <span id="analyticsCognitiveLoad">Balanced</span></li>
+                <li>Estimated Completion Time: <span id="analyticsEstTime">0 mins</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="chapter-card">
+
+        <h3>Generated Output</h3>
+
+        <button id="btnGeneratePrompt">
+            Generate Prompt
+        </button>
+
+        <button id="btnGenerateHTML">
+            Generate HTML Template
+        </button>
+
+        <button id="btnCopyOutput">
+            Copy Output
+        </button>
+
+        <br><br>
+
+        <textarea id="outputArea"
+                  rows="20"
+                  style="width:100%;"></textarea>
+
+    </div>
+
+</div> <script src="dashboard.js"></script>
+
+</body>
+</html>
