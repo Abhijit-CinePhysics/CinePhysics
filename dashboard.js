@@ -318,9 +318,9 @@ function generateHTMLTemplate() {
     outputArea.value =
 `<h1>Worksheet Title</h1>
 
-<p><strong>Class:</strong> 11</p>
+<p><strong>Class:</strong> ${classSelect.value}</p>
 
-<p><strong>Chapter:</strong> Units and Measurements</p>
+<p><strong>Chapter:</strong> ${chapterSearch.value}</p>
 
 <h2>Learning Outcomes</h2>
 
@@ -340,7 +340,7 @@ function generateHTMLTemplate() {
 
 <h2>Section C</h2>
 
-<h2>Answer Key</h2>
+<h2>Answer Key</h2>`;
 
 }
 
