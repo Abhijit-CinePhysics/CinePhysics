@@ -1,0 +1,33 @@
+<h1>Worksheet Importer</h1>
+
+<textarea
+id="worksheetInput"
+rows="20"
+style="width:100%;">
+</textarea>
+
+<br><br>
+
+<button id="btnPreview">
+Preview Worksheet
+</button>
+
+<hr>
+
+<div id="previewArea"></div>
+<script>
+
+document
+.getElementById("btnPreview")
+.addEventListener("click", () => {
+
+    const content =
+        document.getElementById("worksheetInput").value;
+
+    document
+        .getElementById("previewArea")
+        .innerHTML = content;
+
+});
+
+</script>
