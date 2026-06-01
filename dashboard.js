@@ -145,6 +145,11 @@ function generatePrompt() {
     prompt += `Difficulty Level: ${difficulty}\n`;
 
     prompt += `Output Mode: ${outputMode}\n\n`;
+    prompt += "OUTPUT FORMAT (MANDATORY):\n";
+prompt += "Generate website-ready HTML.\n";
+prompt += "Do NOT use Markdown.\n";
+prompt += "Do NOT use LaTeX.\n";
+prompt += "Use HTML tags only.\n\n";
 
  prompt += "Selected Topics (STRICTLY ENFORCED):\n\n";
 
@@ -210,8 +215,15 @@ prompt += "\n";
     prompt += "\nWebsite Publishing Requirements:\n";
 
 prompt += "• Output must be HTML-ready\n";
-prompt += "• Use <sup> for powers and exponents\n";
-prompt += "• Use <sub> for subscripts\n";
+prompt += "• Use HTML superscripts: <sup></sup>\n";
+prompt += "• Use HTML subscripts: <sub></sub>\n";
+prompt += "• Use m s<sup>-1</sup> not m/s\n";
+prompt += "• Use m s<sup>-2</sup> not m/s²\n";
+prompt += "• Use v<sub>0</sub> for initial velocity\n";
+prompt += "• Use Δx for displacement\n";
+prompt += "• Use θ for angles\n";
+prompt += "• Use λ for wavelength\n";
+prompt += "• Use μ for coefficient of friction\n";
 prompt += "• Use ordered lists for questions\n";
 prompt += "• Use proper SI unit formatting\n";
 prompt += "• Preserve Greek symbols\n";
@@ -261,7 +273,19 @@ prompt += "• Ready for direct paste into worksheet HTML file\n";
 
     if(document.getElementById("enhanceExperimental")?.checked)
         prompt += "- Include Experimental Skills Questions\n";
+prompt += "\nWORKSHEET STRUCTURE:\n";
 
+prompt += "<h1>Worksheet Title</h1>\n";
+prompt += "<p>Class and Chapter Information</p>\n";
+prompt += "<h2>Learning Outcomes</h2>\n";
+prompt += "<h2>Instructions</h2>\n";
+prompt += "<h2>Section A</h2>\n";
+prompt += "<h2>Section B</h2>\n";
+prompt += "<h2>Section C</h2>\n";
+
+if(outputMode !== "student"){
+    prompt += "<h2>Answer Key</h2>\n";
+}
     outputArea.value = prompt;
 
 }
@@ -292,19 +316,31 @@ async function copyOutput() {
 function generateHTMLTemplate() {
 
     outputArea.value =
-`<h1>CinePhysics Worksheet</h1>
+`<h1>Worksheet Title</h1>
 
-<h2>${chapterSearch.value}</h2>
+<p><strong>Class:</strong> 11</p>
 
-<p>Class: ${classSelect.value}</p>
+<p><strong>Chapter:</strong> Units and Measurements</p>
 
-<h3>Questions</h3>
+<h2>Learning Outcomes</h2>
 
-<!-- Paste generated questions here -->
+<ul>
+<li></li>
+</ul>
 
-<h3>Answers</h3>
+<h2>Instructions</h2>
 
-<!-- Paste answer key here -->`;
+<ol>
+<li></li>
+</ol>
+
+<h2>Section A</h2>
+
+<h2>Section B</h2>
+
+<h2>Section C</h2>
+
+<h2>Answer Key</h2>
 
 }
 
