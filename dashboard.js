@@ -1,5 +1,3 @@
-alert("dashboard loaded");
-
 // =====================================
 // Combine Class Databases
 // =====================================
@@ -8,7 +6,7 @@ const chapterDatabase = {
     "Class 11": class11Data,
     "Class 12": class12Data
 };
-alert(Object.keys(chapterDatabase["Class 11"]).length);
+
 // =====================================
 // DOM References
 // =====================================
@@ -239,31 +237,87 @@ function generatePrompt() {
     outputArea.value = prompt;
 
 }
+// =====================================
+// Copy Output
+// =====================================
 
-    // =========================
-    // Question Counts
-    // =========================
+async function copyOutput() {
 
-    const mcq =
-        document.getElementById("mcqCount").value;
+    try {
+        await navigator.clipboard.writeText(
+            outputArea.value
+        );
 
-    const assertion =
-        document.getElementById("assertionCount").value;
+        alert("Output copied.");
+    }
 
-    const vsa =
-        document.getElementById("vsaCount").value;
+    catch(err) {
+        alert("Copy failed.");
+    }
 
-    const sa =
-        document.getElementById("saCount").value;
+}
 
-    const la =
-        document.getElementById("laCount").value;
+// =====================================
+// Generate HTML Template
+// =====================================
 
-    const numerical =
-        document.getElementById("numericalCount").value;
+function generateHTMLTemplate() {
 
-    const caseStudy =
-        document.getElementById("caseStudyCount").value;
+    outputArea.value =
+`<h1>CinePhysics Worksheet</h1>
 
-    // =========================
-    //
+<h2>${chapterSearch.value}</h2>
+
+<p>Class: ${classSelect.value}</p>
+
+<h3>Questions</h3>
+
+<!-- Paste generated questions here -->
+
+<h3>Answers</h3>
+
+<!-- Paste answer key here -->`;
+
+}
+
+// =====================================
+// Event Listeners
+// =====================================
+
+classSelect.addEventListener(
+    "change",
+    loadChapters
+);
+
+chapterSearch.addEventListener(
+    "change",
+    loadTopics
+);
+
+document
+.getElementById("btnGeneratePrompt")
+.addEventListener(
+    "click",
+    generatePrompt
+);
+
+document
+.getElementById("btnCopyOutput")
+.addEventListener(
+    "click",
+    copyOutput
+);
+
+document
+.getElementById("btnGenerateHTML")
+.addEventListener(
+    "click",
+    generateHTMLTemplate
+);
+
+// =====================================
+// Initial Load
+// =====================================
+
+loadChapters();
+    
