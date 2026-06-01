@@ -232,3 +232,45 @@ footer {
     margin-top: 0;
     color: #0284c7;
 }
+
+#previewAreaWrapper{
+    position:relative;
+    background:white;
+    color:black;
+    padding:30px;
+    margin-top:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    min-height:400px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+#previewArea{
+    position:relative;
+    z-index:2;
+}
+
+.worksheet-logo{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:80px;
+    z-index:3;
+}
+
+.worksheet-watermark{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(-30deg);
+
+    font-size:70px;
+    font-weight:bold;
+
+    color:rgba(0,0,0,0.05);
+
+    pointer-events:none;
+    user-select:none;
+
+    z-index:1;
+}
