@@ -317,7 +317,11 @@ prompt += "Do NOT use bullets for questions.\n";
 
 prompt += "All questions must be automatically numbered.\n";
 
-prompt += "All MCQ options must use a, b, c, d.\n";
+prompt += "All MCQ options MUST be displayed using HTML ordered list type='a'.\n";
+prompt += "Exactly 4 options per MCQ unless otherwise specified.\n";
+prompt += "Never use bullets for MCQ options.\n";
+prompt += "Never use A), B), C), D).\n";
+prompt += "Use automatic HTML lettering.\n";
     prompt += "\nOUTPUT EXAMPLE:\n";
 
 prompt += `
@@ -337,6 +341,29 @@ What is SI unit of force?
 </li>
 </ol>
 `;
+    prompt += `
+<h2>Section B: Very Short Answer Questions</h2>
+
+<ol>
+<li>Define SI unit.</li>
+<li>What is dimensional analysis?</li>
+<li>Define significant figures.</li>
+</ol>
+
+<h2>Section C: Case Study</h2>
+
+<p><strong>Case Study:</strong></p>
+
+<p>Read the passage and answer the following:</p>
+
+<ol type="i">
+<li>Question</li>
+<li>Question</li>
+<li>Question</li>
+<li>Question</li>
+</ol>
+`;
+
     outputArea.value = prompt;
 
 }
