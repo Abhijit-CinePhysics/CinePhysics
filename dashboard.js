@@ -8,7 +8,7 @@ const chapterDatabase = {
     "Class 11": class11Data,
     "Class 12": class12Data
 };
-
+alert(Object.keys(chapterDatabase["Class 11"]).length);
 // =====================================
 // DOM References
 // =====================================
