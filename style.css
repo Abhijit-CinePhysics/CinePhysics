@@ -271,3 +271,24 @@ footer {
     user-select:none;
     z-index:1;
 }
+
+
+.watermark-grid{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-wrap:wrap;
+    align-content:space-evenly;
+    justify-content:space-evenly;
+
+    font-size:60px;
+    font-weight:bold;
+
+    color:rgba(0,0,0,0.025);
+
+    transform:rotate(-30deg);
+
+    pointer-events:none;
+    z-index:1;
+}
