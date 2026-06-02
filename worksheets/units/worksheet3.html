@@ -1,17 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CinePhysics Worksheet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Worksheet 2 | Units and Measurements</title>
+
 <link rel="stylesheet" href="../../style.css?v=5">
+    <style>
+
+#previewAreaWrapper{
+    position:relative;
+    background:white;
+    color:black;
+    
+    margin-top:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    min-height:600px;
+    overflow:hidden;
+}
+
+#previewArea{
+    position:relative;
+    z-index:2;
+    padding:30px;
+}
+
+.worksheet-header{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+}
+
+.worksheet-logo{
+    width:100px;
+    height:auto;
+}
+
+.worksheet-banner{
+    display:block;
+
+    width:calc(100% + 60px);
+
+    margin-left:-30px;
+    margin-right:-30px;
+    margin-top:-30px;
+
+    height:auto;
+    display:block;
+
+    border-radius:10px 10px 0 0;
+}
+    
+.watermark-grid{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-wrap:wrap;
+
+    align-content:space-evenly;
+    justify-content:space-evenly;
+
+    font-size:60px;
+    font-weight:bold;
+
+    color:rgba(0,0,0,0.025);
+
+    transform:rotate(-30deg);
+
+    pointer-events:none;
+    user-select:none;
+
+    z-index:1;
+}
+
+    .worksheet-footer{
+    text-align:center;
+
+    margin-top:40px;
+    padding-top:15px;
+
+    border-top:1px solid #ddd;
+
+    font-size:14px;
+    color:#666;
+
+    position:relative;
+    z-index:2;
+    }
+
+    @media print{
+
+    .worksheet-banner{
+        height:140px;
+    }
+
+    h1,h2{
+        page-break-after:avoid;
+    }
+
+    ol{
+        page-break-inside:avoid;
+    }
+    }
+    </style>
+
 </head>
 <body>
+<div id="previewAreaWrapper">
 
-<header>
-<h1>Worksheet Under Development</h1>
-</header>
+    <img
+        src="/CinePhysics/banner.jpg"
+        class="worksheet-banner"
+        alt="CinePhysics Banner">
 
-<div class="container">
-<p>This worksheet is currently being developed.</p>
+    <div class="watermark-grid">
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+    </div>
+
+    <div id="worksheetContent">
+
+        <h1>Worksheet 3</h1>
+<h1>Class 11 Physics Practice Worksheet</h1>
+<p><strong>Chapter:</strong> Units and Measurements
+<strong>Selected Topics:</strong> Dimensions, Dimensional Formulae, Dimensional Analysis, and Applications of Dimensional Analysis
+<strong>Difficulty Level:</strong> Mixed (CBSE & NCERT aligned)</p>
+<h2>Learning Outcomes</h2>
+<ol>
+<li>Determine the dimensional formulae of foundational physical quantities.</li>
+<li>Apply the principle of homogeneity of dimensions to validate physical equations.</li>
+<li>Utilize dimensional analysis to convert units between systems and derive relationships between physical variables.</li>
+</ol>
+<h2>Instructions</h2>
+<ol>
+<li>Answer all questions using proper scientific terminology and formatting.</li>
+<li>Show step-by-step substitution of dimensions for numerical and short answer questions.</li>
+<li>Verify that the physical equations maintain dimensional consistency.</li>
+</ol>
+<h2>Section A: Multiple Choice Questions</h2>
+<ol>
+<li>
+Which of the following pairs of physical quantities shares identical dimensional formulae?
+<ol type="a">
+<li>Work and Torque</li>
+<li>Force and Power</li>
+<li>Stress and Strain</li>
+<li>Impulse and Momentum Gradient</li>
+</ol>
+</li>
+<li>
+The dimensional formula for the universal gravitational constant G is:
+<ol type="a">
+<li>[M<sup>-1</sup> L<sup>3</sup> T<sup>-2</sup>]</li>
+<li>[M<sup>1</sup> L<sup>3</sup> T<sup>-2</sup>]</li>
+<li>[M<sup>-1</sup> L<sup>2</sup> T<sup>-2</sup>]</li>
+<li>[M<sup>-2</sup> L<sup>3</sup> T<sup>-1</sup>]</li>
+</ol>
+</li>
+<li>
+In the relation P = a / x + b t, where P represents pressure, x denotes distance, and t represents time, the dimensions of the constant coefficient b must be:
+<ol type="a">
+<li>[M<sup>1</sup> L<sup>-1</sup> T<sup>-3</sup>]</li>
+<li>[M<sup>1</sup> L<sup>-2</sup> T<sup>-2</sup>]</li>
+<li>[M<sup>1</sup> L<sup>1</sup> T<sup>-3</sup>]</li>
+<li>[M<sup>0</sup> L<sup>2</sup> T<sup>-1</sup>]</li>
+</ol>
+</li>
+<li>
+If force F, velocity v, and time t are chosen as the fundamental base quantities instead of mass, length, and time, then the dimensional formula for mass will be expressed as:
+<ol type="a">
+<li>[F v<sup>-1</sup> t<sup>1</sup>]</li>
+<li>[F v<sup>1</sup> t<sup>-1</sup>]</li>
+<li>[F v<sup>-1</sup> t<sup>-1</sup>]</li>
+<li>[F v<sup>2</sup> t<sup>-1</sup>]</li>
+</ol>
+</li>
+<li>
+According to the principle of homogeneity of dimensions, an equation is considered dimensionally correct if:
+<ol type="a">
+<li>The dimensions of every term on both sides of the equation are equal.</li>
+<li>The total numerical values on both sides of the equation are equal.</li>
+<li>The arguments of trigonometric functions contain dimensions of length.</li>
+<li>The constant of proportionality is equal to one.</li>
+</ol>
+</li>
+<li>
+The dimensional analysis method cannot be applied to derive a physical relation if the dependent variable depends on more than:
+<ol type="a">
+<li>Three independent physical variables involving mass, length, and time.</li>
+<li>Two independent physical variables involving mass and length.</li>
+<li>Four independent dimensionless scaling constants.</li>
+<li>One single fundamental base dimension.</li>
+</ol>
+</li>
+<li>
+The dimensional formula for the coefficient of viscosity μ is:
+<ol type="a">
+<li>[M<sup>1</sup> L<sup>-1</sup> T<sup>-1</sup>]</li>
+<li>[M<sup>1</sup> L<sup>-2</sup> T<sup>-1</sup>]</li>
+<li>[M<sup>1</sup> L<sup>-1</sup> T<sup>-2</sup>]</li>
+<li>[M<sup>1</sup> L<sup>1</sup> T<sup>-1</sup>]</li>
+</ol>
+</li>
+<li>
+The expression for the velocity of a particle is given by v = v<sub>0</sub> e<sup>-k t</sup>, where t represents time. The dimensional formula for the constant factor k is:
+<ol type="a">
+<li>[M<sup>0</sup> L<sup>0</sup> T<sup>-1</sup>]</li>
+<li>[M<sup>0</sup> L<sup>0</sup> T<sup>1</sup>]</li>
+<li>[M<sup>1</sup> L<sup>0</sup> T<sup>-1</sup>]</li>
+<li>[M<sup>0</sup> L<sup>1</sup> T<sup>-1</sup>]</li>
+</ol>
+</li>
+<li>
+Which of the following parameters represents a dimensionless physical quantity that still possesses a specific unit of measurement?
+<ol type="a">
+<li>Plane Angle (θ)</li>
+<li>Relative Density</li>
+<li>Refractive Index</li>
+<li>Strain</li>
+</ol>
+</li>
+<li>
+If kinetic energy E depends on the mass m of an object and its speed v as E = k m<sup>x</sup> v<sup>y</sup>, dimensional analysis yields which values for the exponents x and y?
+<ol type="a">
+<li>x = 1, y = 2</li>
+<li>x = 2, y = 1</li>
+<li>x = 1, y = 1</li>
+<li>x = 1, y = -2</li>
+</ol>
+</li>
+</ol>
+<h2>Section B: Assertion Reason</h2>
+<ol>
+<li>
+Assertion: A physical equation that is dimensionally correct may not necessarily be a physically valid or correct equation.
+
+Reason: Dimensionless constants present in a physical relation cannot be determined or validated solely by the method of dimensional analysis.
+</li>
+<li>
+Assertion: The quantity velocity gradient has the same dimensional formula as frequency.
+
+Reason: Velocity gradient is defined as the change in velocity per unit displacement.
+</li>
+<li>
+Assertion: Arguments of logarithmic, exponential, and trigonometric functions used in physical equations must always be dimensionless.
+
+Reason: The properties of pure mathematical ratios require that their inputs do not carry fundamental base dimensions.
+</li>
+<li>
+Assertion: The unit system conversion factor from SI to CGS for work is 10<sup>7</sup>.
+
+Reason: The dimensional formula of work contains a length dimension squared, which scales by a factor of 100<sup>2</sup> during unit transformation.
+</li>
+<li>
+Assertion: You can add a velocity vector term to an acceleration vector term if they act along the same line of motion.
+
+Reason: Only physical quantities possessing identical dimensions can be added, subtracted, or compared.
+</li>
+</ol>
+<h2>Section C: Very Short Answer</h2>
+<ol>
+<li>Define the term 'Dimensions of a physical quantity' using clear scientific terminology.</li>
+<li>State the fundamental limitation of dimensional analysis regarding equations that involve a sum or difference of multiple terms, such as Δx = v<sub>0</sub> t + 0.5 a t<sup>2</sup>.</li>
+<li>Write down the dimensional formula for the physical parameter kinetic energy and compare it directly with the dimensional formula for potential energy.</li>
+<li>Identify the dimensional formula of the ratio of linear momentum to angular momentum for a rotating particle.</li>
+<li>An angle θ is measured as the ratio of an arc length to the radius of a circle. Explain briefly why this parameter is classified as a dimensionless quantity.</li>
+</ol>
+<h2>Section D: Short Answer</h2>
+<ol>
+<li>Explain the principle of homogeneity of dimensions. How is this principle utilized to verify whether a newly formulated physical equation is correct or incorrect?</li>
+<li>The viscous force F acting on a small spherical ball of radius r falling through a fluid depends on the coefficient of viscosity μ, the radius r, and the terminal velocity v. Use the method of dimensional analysis to establish the functional relationship between these quantities.</li>
+<li>Describe three major structural limitations of the applications of dimensional analysis when analyzing complex physical frameworks.</li>
+<li>The velocity v of water waves depends on the wavelength λ, the density of water ρ, and the acceleration due to gravity g. Deduce the relation between v, λ, ρ, and g using dimensional analysis rules.</li>
+<li>A student writes a formula for the time period of a simple pendulum as T = 2 π √(g / l), where l is the length and g is the acceleration due to gravity. Check the dimensional consistency of this equation and state whether the formula is correct or incorrect.</li>
+</ol>
+<h2>Section E: Numericals</h2>
+<ol>
+<li>The value of the acceleration due to gravity is measured as 9.8 m s<sup>-2</sup> in the SI system. Convert this numerical value into a new custom unit system where the base unit of length is defined as 1 km and the base unit of time is defined as 1 minute.</li>
+<li>In a specific experimental setup, the pressure P of a gas depends on volume V and temperature T according to the van der Waals expression (P + a / V<sup>2</sup>)(V - b) = R T. Determine the explicit dimensional formulae for the custom constant parameters a and b.</li>
+<li>The frequency of oscillation f of a stretched string depends on its hanging length l, the tension force F applied to the string, and its mass per unit length m. Derive the exact proportional formula for frequency utilizing dimensional analysis parameters.</li>
+<li>Convert a energy value of 100 Joules (SI unit) into Ergs (CGS unit) by implementing the formal dimensional analysis unit conversion formula n<sub>2</sub> = n<sub>1</sub> [M<sub>1</sub>/M<sub>2</sub>]<sup>a</sup> [L<sub>1</sub>/L<sub>2</sub>]<sup>b</sup> [T<sub>1</sub>/T<sub>2</sub>]<sup>c</sup>.</li>
+<li>The rate of flow of a liquid through a capillary tube, measured as volume per unit time V/t, depends on the pressure gradient across the tube (P/l), the radius of the inner core r, and the fluid coefficient of viscosity μ. Derive the formula for the fluid flow rate using the principles of dimensional analysis.</li>
+</ol>
+      
+
+
+
+
+
+
+    </div>
+
+    <div class="worksheet-footer">
+        CinePhysics HQ • Physics Made Visual
+    </div>
+
 </div>
 
 </body>
