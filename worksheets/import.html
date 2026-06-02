@@ -43,30 +43,28 @@
     border-radius:10px 10px 0 0;
 }
     
-.worksheet-watermark{
+.watermark-grid{
     position:absolute;
-    top:50%;
-    left:50%;
+    inset:0;
 
-    transform:
-        translate(-50%,-50%)
-        rotate(-30deg);
+    display:flex;
+    flex-wrap:wrap;
 
-    font-size:80px;
+    align-content:space-evenly;
+    justify-content:space-evenly;
+
+    font-size:60px;
     font-weight:bold;
 
-    color:rgba(0,0,0,0.05);
+    color:rgba(0,0,0,0.025);
 
-    z-index:1;
+    transform:rotate(-30deg);
 
     pointer-events:none;
     user-select:none;
+
+    z-index:1;
 }
-<div class="watermark-grid">
-    CINEPHYSICS CINEPHYSICS CINEPHYSICS
-    CINEPHYSICS CINEPHYSICS CINEPHYSICS
-    CINEPHYSICS CINEPHYSICS CINEPHYSICS
-</div>
 </style>
 
 <h1>Worksheet Importer</h1>
@@ -95,10 +93,24 @@ Preview Worksheet
     alt="CinePhysics Banner">
 
 </div>
+<div id="previewAreaWrapper">
 
-    <div class="worksheet-watermark">
-        CINEPHYSICS
+    <img
+        src="/CinePhysics/banner.jpg"
+        class="worksheet-banner"
+        alt="CinePhysics Banner">
+
+    <div class="watermark-grid">
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
+        CINEPHYSICS CINEPHYSICS CINEPHYSICS
     </div>
+
+    <div id="previewArea"></div>
+
+</div>
+    
 
     <div id="previewArea"></div>
 
