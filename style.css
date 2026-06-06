@@ -292,3 +292,13 @@ footer {
     pointer-events:none;
     z-index:1;
 }
+/* ==========================================================================
+   Latest Updates video
+   ========================================================================== */
+
+.video-showcase { padding: 40px 20px; max-width: 1000px; margin: auto; }
+.featured-video-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
+.recent-uploads-grid { display: grid; gap: 15px; }
+.recent-item { padding: 15px; border-bottom: 1px solid #e2e8f0; transition: background 0.3s; }
+.recent-item:hover { background: #f8fafc; }
+
