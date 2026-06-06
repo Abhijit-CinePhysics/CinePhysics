@@ -621,6 +621,55 @@
         document.getElementById("btnGeneratePrompt").addEventListener("click", generatePrompt);
         document.getElementById("btnCopyOutput").addEventListener("click", copyOutput);
         document.getElementById("btnGenerateHTML").addEventListener("click", generateHTMLTemplate);
+        
+        // =====================================
+        // Difficulty Analytics Engine
+        // =====================================
+        function updateAnalytics() {
+            // 1. Gather counts safely
+            const mcq = parseInt(document.getElementById("mcqCount").value, 10) || 0;
+            const assertion = parseInt(document.getElementById("assertionCount").value, 10) || 0;
+            const vsa = parseInt(document.getElementById("vsaCount").value, 10) || 0;
+            const sa = parseInt(document.getElementById("saCount").value, 10) || 0;
+            const la = parseInt(document.getElementById("laCount").value, 10) || 0;
+            const numerical = parseInt(document.getElementById("numericalCount").value, 10) || 0;
+            const caseStudy = parseInt(document.getElementById("caseStudyCount").value, 10) || 0;
+
+            // 2. Calculate Total Marks (Standard CBSE Weighting)
+            // MCQ: 1, A-R: 1, VSA: 2, SA: 3, LA: 5, Num: 3, Case: 4
+            const totalMarks = (mcq * 1) + (assertion * 1) + (vsa * 2) + 
+                               (sa * 3) + (la * 5) + (numerical * 3) + (caseStudy * 4);
+
+            // 3. Calculate Estimated Time (in minutes)
+            const totalTime = Math.round(
+                (mcq * 1.5) + (assertion * 1.5) + (vsa * 3) + 
+                (sa * 6) + (la * 10) + (numerical * 8) + (caseStudy * 12)
+            );
+
+            // 4. Determine Cognitive Load based on Difficulty Dropdown
+            const diffLevel = document.getElementById("difficulty").value;
+            let cogLoad = "Balanced";
+            
+            if (diffLevel === "Basic") cogLoad = "Light";
+            else if (diffLevel === "Moderate") cogLoad = "Balanced";
+            else if (diffLevel === "Advanced") cogLoad = "High";
+            else if (diffLevel === "Mixed") cogLoad = "Varied";
+
+            // 5. Update the UI
+            document.getElementById("analyticsTotalMarks").innerText = totalMarks;
+            document.getElementById("analyticsEstTime").innerText = totalTime + " mins";
+            document.getElementById("analyticsCognitiveLoad").innerText = cogLoad;
+        }
+
+        // 6. Attach Event Listeners for real-time updates
+        const analyticsInputs = [
+            "mcqCount", "assertionCount", "vsaCount", "saCount", 
+            "laCount", "numericalCount", "caseStudyCount", "difficulty"
+        ];
+        
+        analyticsInputs.forEach(id => {
+            document.getElementById(id).addEventListener('input', updateAnalytics);
+        });
 
         // =====================================
         // Initial Load
